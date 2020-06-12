@@ -4,15 +4,19 @@ import Character from './Character';
 import axios from 'axios';
 
 const CharacterPage = props => {
-    const [rmData, updateRM] = useState(props);
+
+    //const [rmData, updateRM] = useState(props);
+    const {rmData} = props;
     
+    /*
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character/1,2,3,7,8,14,24,26,40,47,150,244,265,372')
             .then(portalGun => {
                 debugger
-                updateRM(portalGun.data);
+                let fetchedPortal = portalGun.data;
+                updateRM(fetchedPortal); //rmData should now hold 14 elements from the above API
                 debugger
-                console.log(portalGun.data.name);
+                console.log(fetchedPortal.name);
                 //console.log(rmData);
                 debugger
                 //console.log(rmData.location.name);
@@ -21,9 +25,10 @@ const CharacterPage = props => {
                 console.log('Oops! We just teleported in to the Galactic Federation');
             })
     }, []);
+    */
 
     debugger;
-    const rmHolder = rmData;
+    let rmHolder = rmData;
     console.log(rmData);
     /*
         rmData now returns:
@@ -36,7 +41,6 @@ const CharacterPage = props => {
     debugger;
     // After trying to create the return elements though, I'm getting errors
 
-
     return (
         <div>
             {
@@ -44,6 +48,11 @@ const CharacterPage = props => {
                     return <Character key={rmIndex} rmPost={rmObj} />;
                 })
             }
+            {/*
+                rmData.foreach(function(rmObj, rmIndex) {
+                    return <Character key={rmIndex} rmPost={rmObj} />;
+                })
+            */}
         </div>
     );
 
