@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import CharacterPage from './components/CharacterPage';
+import Character from './components/Character';
 import axios from 'axios'
 import './App.css';
 //import Character from './components/Character';
@@ -44,7 +44,7 @@ const App = () => {
       <section className="displayRM">
         {
           rmPkg.map(function(rmItem, rmPos) {
-            return <CharacterPage rmData={rmItem} rmKey={rmPos} />;
+            return <Character rmData={rmItem} rmKey={rmPos} />;
           })
         }
       </section>
